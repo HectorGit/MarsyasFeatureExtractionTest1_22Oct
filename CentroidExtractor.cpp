@@ -24,7 +24,7 @@ void CentroidExtractor::toy_with_centroid(string sfName1)
 	cout << "Created MarSystemManager " << endl;
 	
 	MarSystem* net = mng.create("Series/net");
-	/*MarSystem* accum = mng.create("Accumulator/accum");
+	MarSystem* accum = mng.create("Accumulator/accum");
 
 	//cout << "Created Net and Accumulator " << endl;
 
@@ -50,8 +50,8 @@ void CentroidExtractor::toy_with_centroid(string sfName1)
 	ofs << *cnet << endl;
 	ofs.close();
 
-	net->updControl("Accumulator/accum/mrs_natural/maxTimes", 2000);
-	net->updControl("Accumulator/accum/mrs_natural/timesToKeep", 1);
+	net->updControl("Accumulator/accum/mrs_natural/maxTimes", 2000); //this is why it does it 1999 times!
+	net->updControl("Accumulator/accum/mrs_natural/timesToKeep", 1); //why just one
 	net->linkControl("Accumulator/accum/mrs_bool/flush",
 		"Accumulator/accum/Series/cnet/SoundFileSource/src/mrs_bool/currentCollectionNewFile");
 	net->updControl("Accumulator/accum/Series/cnet/SoundFileSource/src/mrs_real/duration", 0.5);
@@ -64,7 +64,7 @@ void CentroidExtractor::toy_with_centroid(string sfName1)
 		const mrs_realvec& src_data =
 			net->getctrl("mrs_realvec/processedData")->to<mrs_realvec>();
 		cout << src_data << endl;
-	}*/
+	}
 
 }
 

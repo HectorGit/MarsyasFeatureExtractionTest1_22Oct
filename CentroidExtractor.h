@@ -26,7 +26,7 @@ CentroidExtractor.h
 #include <string>
 #include <iomanip>
 
-//#include <marsyas/common_source.h> //wtf
+#include <marsyas/common_source.h> //wtf
 #include <marsyas/Collection.h>
 #include <marsyas/NumericLib.h>
 #include <marsyas/CommandLineOptions.h>
